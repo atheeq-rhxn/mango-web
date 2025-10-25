@@ -7,7 +7,7 @@ export function Header() {
 			<div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
 				<Link href="/" className="group flex items-center gap-2">
 					<Image
-						src="https://opeheybxdg2xe4zd.public.blob.vercel-storage.com/logo.png"
+						src="/logo-32x32.png"
 						alt="MangoWC Logo"
 						width={32}
 						height={32}

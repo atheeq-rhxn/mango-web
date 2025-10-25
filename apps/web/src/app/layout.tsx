@@ -34,6 +34,7 @@ const geist = Geist({ subsets: ["latin"] });
 const geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://mangowc.vercel.app"),
 	title: "MangoWC - Lightweight Wayland Compositor",
 	description:
 		"A minimal Wayland compositor inspired by dwl, featuring smooth scrolling, scratchpads, workspace overview, and rich window states for a productive desktop experience.",
@@ -50,6 +51,15 @@ export const metadata: Metadata = {
 		"animations",
 		"xwayland",
 	],
+	icons: {
+		icon: "/favicon.ico",
+		apple: "/logo-192x192.png",
+		other: [
+			{ rel: "icon", url: "/logo-16x16.png" },
+			{ rel: "icon", url: "/logo-32x32.png" },
+			{ rel: "icon", url: "/logo-512x512.png" },
+		],
+	},
 	openGraph: {
 		title: "MangoWC - Lightweight Wayland Compositor",
 		description:
@@ -58,7 +68,7 @@ export const metadata: Metadata = {
 		siteName: "MangoWC",
 		images: [
 			{
-				url: "https://opeheybxdg2xe4zd.public.blob.vercel-storage.com/logo.png",
+				url: "/logo-1200x630.png",
 				width: 1200,
 				height: 630,
 				alt: "MangoWC Logo",
@@ -72,9 +82,7 @@ export const metadata: Metadata = {
 		title: "MangoWC - Lightweight Wayland Compositor",
 		description:
 			"A minimal Wayland compositor inspired by dwl, featuring smooth scrolling, scratchpads, workspace overview, and rich window states.",
-		images: [
-			"https://opeheybxdg2xe4zd.public.blob.vercel-storage.com/logo.png",
-		],
+		images: ["/logo-1200x630.png"],
 	},
 	robots: {
 		index: true,

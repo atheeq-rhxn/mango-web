@@ -8,7 +8,7 @@ export function Footer() {
 					<div>
 						<div className="mb-4 flex items-center gap-2">
 							<Image
-								src="https://opeheybxdg2xe4zd.public.blob.vercel-storage.com/logo.png"
+								src="/logo-32x32.png"
 								alt="MangoWC Logo"
 								width={32}
 								height={32}
