@@ -1,11 +1,13 @@
 import { Analytics } from "@vercel/analytics/next";
+import { RootProvider } from "fumadocs-ui/provider/next";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../index.css";
 import Providers from "@/components/providers";
 
+// biome-ignore lint/correctness/noUnusedVariables: fonts are used in CSS variables
 const geist = Geist({ subsets: ["latin"] });
-const geistMono = Geist_Mono({ subsets: ["latin"] });
+const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 const jsonLd = {
 	"@context": "https://schema.org",
@@ -111,14 +113,16 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body className="font-sans antialiased">
+			<body className="flex min-h-screen flex-col font-sans antialiased">
 				<a
 					href="#main"
-					className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-primary-foreground px-4 py-2 rounded z-50"
+					className="sr-only z-50 rounded bg-primary px-4 py-2 text-primary-foreground focus:not-sr-only focus:absolute focus:top-4 focus:left-4"
 				>
 					Skip to main content
 				</a>
-				<Providers>{children}</Providers>
+				<RootProvider>
+					<Providers>{children}</Providers>
+				</RootProvider>
 				<Analytics />
 				<script
 					type="application/ld+json"

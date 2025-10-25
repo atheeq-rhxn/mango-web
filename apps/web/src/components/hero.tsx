@@ -1,11 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
 
 export function Hero() {
-	const [isPlaying, setIsPlaying] = useState(false);
-
 	return (
 		<section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-20 sm:px-6 lg:px-8">
 			{/* Background grid effect */}

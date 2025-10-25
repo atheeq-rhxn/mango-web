@@ -45,9 +45,9 @@ export function Highlights() {
 				</div>
 
 				<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-					{highlights.map((highlight, index) => (
+					{highlights.map((highlight, _index) => (
 						<div
-							key={index}
+							key={highlight.title}
 							className="rounded-lg border border-border bg-background p-6 transition-colors hover:border-accent/50"
 						>
 							<h3 className="mb-2 font-bold text-foreground text-lg">
