@@ -44,6 +44,7 @@
         "@radix-ui/react-tooltip": "1.1.6",
         "@tanstack/react-query": "^5.85.5",
         "@vercel/analytics": "latest",
+        "@vercel/speed-insights": "^1.2.0",
         "autoprefixer": "^10.4.20",
         "babel-plugin-react-compiler": "^1.0.0",
         "class-variance-authority": "^0.7.1",
@@ -590,6 +591,8 @@
     "@vercel/remix-builder": ["@vercel/remix-builder@5.5.0", "", { "dependencies": { "@vercel/error-utils": "2.0.3", "@vercel/nft": "0.30.1", "@vercel/static-config": "3.1.2", "path-to-regexp": "6.1.0", "path-to-regexp-updated": "npm:path-to-regexp@6.3.0", "ts-morph": "12.0.0" } }, "sha512-79hF8HMmttzxlX6lEUPSQeyPuJqXu5t2xnwC5gHvMLJTb4TR2M8EX4v6UnvjJ9ZWbqA+a/ZLl8oV1dQ/GLwtEw=="],
 
     "@vercel/ruby": ["@vercel/ruby@2.2.1", "", {}, "sha512-DsmTCggOa/Uvt/9JkafXx9U+Bz5eNIb6Bs422EOQo2zKwcxW88ITSh8mM5m0dQ0+B4k02X/moVim6iFa4sjazg=="],
+
+    "@vercel/speed-insights": ["@vercel/speed-insights@1.2.0", "", { "peerDependencies": { "@sveltejs/kit": "^1 || ^2", "next": ">= 13", "react": "^18 || ^19 || ^19.0.0-rc", "svelte": ">= 4", "vue": "^3", "vue-router": "^4" }, "optionalPeers": ["@sveltejs/kit", "next", "react", "svelte", "vue", "vue-router"] }, "sha512-y9GVzrUJ2xmgtQlzFP2KhVRoCglwfRQgjyfY607aU0hh0Un6d0OUyrJkjuAlsV18qR4zfoFPs/BiIj9YDS6Wzw=="],
 
     "@vercel/static-build": ["@vercel/static-build@2.8.0", "", { "dependencies": { "@vercel/gatsby-plugin-vercel-analytics": "1.0.11", "@vercel/gatsby-plugin-vercel-builder": "2.0.99", "@vercel/static-config": "3.1.2", "ts-morph": "12.0.0" } }, "sha512-Mn26FSyUQ+fDvv9HyKWBpb7G6bzo5Iv9urYKuUdvcG8bVhVllUVR47UWsQIq4Zl9AmzViVzjSGLXzf8wG6Sb3A=="],
 
