@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { MangoLayouts } from "@/components/ui/mango-layouts";
+import { MangoLayouts } from "@/components/mango-layouts";
 
 export function Hero() {
 	return (
