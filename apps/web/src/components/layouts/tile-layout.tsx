@@ -84,15 +84,6 @@ export function TileLayout({ orientation }: TileLayoutProps) {
 			// 7: Despawn 2
 			// 8: Despawn 1
 
-			// Determine Focus
-			let focusedWindow = 1;
-			if (phase === 2) focusedWindow = 2;
-			else if (phase >= 3 && phase <= 5)
-				focusedWindow = 3; // Keep focus on 3 during Swap & Return
-			else if (phase === 6)
-				focusedWindow = 2; // Focus 2 when 3 leaves
-			else if (phase >= 7) focusedWindow = 1; // Focus 1 when 2 leaves
-
 			// Determine Active Windows Count
 			let activeWindows = 0;
 			if (phase >= 1) activeWindows = 1;
@@ -101,26 +92,35 @@ export function TileLayout({ orientation }: TileLayoutProps) {
 			if (phase === 6) activeWindows = 2;
 			if (phase >= 7) activeWindows = 1;
 
+			// Determine Focus
+			let focusedWindow = 1;
+			if (phase === 2) focusedWindow = 2;
+			else if (phase >= 3 && phase <= 5) focusedWindow = 3; // Keep focus on 3 during Swap & Return
+			else if (phase === 6) focusedWindow = 2; // Focus 2 when 3 leaves
+			else if (phase >= 7) focusedWindow = 1; // Focus 1 when 2 leaves
+
 			// Is Swap State?
 			const isSwap = phase === 4;
 
 			// --- Calculate Rects based on Orientation ---
-
+			
 			// Define standard positions (Normal State)
 			// Pos 0: Master
-			// Pos 1: Stack 1 (Top/Left)
-			// Pos 2: Stack 2 (Bottom/Right)
-			let pos0!: { x: number; y: number; w: number; h: number };
-			let pos1!: { x: number; y: number; w: number; h: number };
-			let pos2!: { x: number; y: number; w: number; h: number };
+			// Pos 1: Stack 1
+			// Pos 2: Stack 2
+			let pos0, pos1, pos2;
 
 			if (isVert) {
 				// Vertical: Master Top
 				if (activeWindows === 1) {
 					pos0 = { x: 0, y: 0, w: width, h: height };
+					// Pre-calculate stack positions even if unused, to prevent jumping to 0,0 on exit
+					pos1 = { x: 0, y: v_bottomY, w: width, h: v_halfH };
+					pos2 = { x: v_rightX, y: v_bottomY, w: v_halfW, h: v_halfH };
 				} else if (activeWindows === 2) {
 					pos0 = { x: 0, y: 0, w: width, h: v_halfH };
 					pos1 = { x: 0, y: v_bottomY, w: width, h: v_halfH };
+					pos2 = { x: v_rightX, y: v_bottomY, w: v_halfW, h: v_halfH };
 				} else {
 					pos0 = { x: 0, y: 0, w: width, h: v_halfH };
 					pos1 = { x: 0, y: v_bottomY, w: v_halfW, h: v_halfH };
@@ -130,9 +130,13 @@ export function TileLayout({ orientation }: TileLayoutProps) {
 				// Horizontal: Master Left
 				if (activeWindows === 1) {
 					pos0 = { x: 0, y: 0, w: width, h: height };
+					// Pre-calculate stack positions
+					pos1 = { x: h_rightX, y: 0, w: h_halfW, h: height }; 
+					pos2 = { x: h_rightX, y: h_bottomY, w: h_halfW, h: h_halfH };
 				} else if (activeWindows === 2) {
 					pos0 = { x: 0, y: 0, w: h_halfW, h: height };
 					pos1 = { x: h_rightX, y: 0, w: h_halfW, h: height };
+					pos2 = { x: h_rightX, y: h_bottomY, w: h_halfW, h: h_halfH };
 				} else {
 					pos0 = { x: 0, y: 0, w: h_halfW, h: height };
 					pos1 = { x: h_rightX, y: 0, w: h_halfW, h: h_halfH };
@@ -143,60 +147,31 @@ export function TileLayout({ orientation }: TileLayoutProps) {
 			// --- Apply to Windows ---
 
 			// Window 1
-			// Normal: pos0 (Master)
-			// Swap: pos2 (Stack Bottom/Right) - Swaps with 3
 			let target1 = pos0;
 			if (isSwap && activeWindows === 3) target1 = pos2;
-
+			
 			set(
-				r1.current,
-				target1?.x ?? 0,
-				target1?.y ?? 0,
-				target1?.w ?? 0,
-				target1?.h ?? 0,
+				r1.current, target1.x, target1.y, target1.w, target1.h,
 				phase > 0 && phase < 8,
-				focusedWindow === 1,
+				focusedWindow === 1
 			);
 
 			// Window 2
-			// Always pos1 (Stack Top/Left) in 3-window layout
-			// In 2-window layout, it's pos1 (Full Stack)
-			// Swap: Stays in pos1
 			let target2 = pos1;
-			// (No change for swap)
-
 			set(
-				r2.current,
-				target2?.x ?? 0,
-				target2?.y ?? 0,
-				target2?.w ?? 0,
-				target2?.h ?? 0,
+				r2.current, target2.x, target2.y, target2.w, target2.h,
 				phase >= 2 && phase < 7,
-				focusedWindow === 2,
+				focusedWindow === 2
 			);
 
 			// Window 3
-			// Normal: pos2 (Stack Bottom/Right)
-			// Swap: pos0 (Master)
 			let target3 = pos2;
 			if (isSwap && activeWindows === 3) target3 = pos0;
 
-			// Pre-position for entry
-			if (activeWindows < 3) {
-				// Just keep it where it would be
-				target3 = isVert
-					? { x: v_rightX, y: v_bottomY, w: v_halfW, h: v_halfH }
-					: { x: h_rightX, y: h_bottomY, w: h_halfW, h: h_halfH };
-			}
-
 			set(
-				r3.current,
-				target3?.x ?? 0,
-				target3?.y ?? 0,
-				target3?.w ?? 0,
-				target3?.h ?? 0,
+				r3.current, target3.x, target3.y, target3.w, target3.h,
 				phase >= 3 && phase < 6,
-				focusedWindow === 3,
+				focusedWindow === 3
 			);
 		};
 
