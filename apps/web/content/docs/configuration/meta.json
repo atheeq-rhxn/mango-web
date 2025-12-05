@@ -1,0 +1,10 @@
+{
+	"pages": [
+		"index",
+		"core-settings",
+		"window-management",
+		"input-devices",
+		"appearance",
+		"advanced"
+	]
+}

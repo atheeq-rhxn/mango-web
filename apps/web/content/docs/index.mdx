@@ -1,34 +1,58 @@
 ---
-title: Introduction
-description: A lightweight Wayland compositor with modern features
+title: Documentation
+description: Complete MangoWC documentation and guides
 ---
 
-<Callout type="warn">
-  This documentation is in early stages and may not be complete. It's just the beginning of the documentation.
+import { Cards, Card } from 'fumadocs-ui/components/card';
+import { Callout } from 'fumadocs-ui/components/callout';
+
+# MangoWC Documentation
+
+Welcome to the comprehensive documentation for MangoWC, a dynamic Wayland compositor based on [dwl](https://codeberg.org/dwl/dwl/).
+
+<Callout>
+  This documentation covers installation, configuration, features, and integrations for MangoWC.
 </Callout>
 
-## What is MangoWC?
+## Getting Started
 
-MangoWC is a dynamic Wayland compositor based on [dwl](https://codeberg.org/dwl/dwl/).
-
-## Feature Highlights
-
-- Excellent xwayland support
-- Tag-based workspaces
-- Smooth animations
-- Excellent input method support
-- Flexible window layouts
-- Rich window states
-- External configuration
-- Scratchpad and overview
-- IPC support
-- Window effects
-
-### Resources
+New to MangoWC? Start here to get up and running quickly.
 
 <Cards>
-  <Card href="/docs/installation" title="Installation" description="Get started with MangoWC" />
-  <Card href="/docs/configuration" title="Configuration" description="Basic setup guide" />
-  <Card href="https://www.tonybtw.com/tutorial/mangowc/" title="Tutorial" description="Guide by Tony" />
-  <Card href="https://github.com/DreamMaoMao/mangowc" title="GitHub" description="Source code" />
+  <Card href="/docs/getting-started" title="Getting Started" description="Overview, installation, and basic setup" />
+  <Card href="/docs/getting-started/installation" title="Installation" description="Install MangoWC on your system" />
+  <Card href="/docs/getting-started/basic-setup" title="Basic Setup" description="Configure your first keybindings" />
+</Cards>
+
+## Configuration
+
+Learn how to configure MangoWC for your workflow.
+
+<Cards>
+  <Card href="/docs/configuration" title="Configuration Overview" description="Configuration guide and navigation" />
+  <Card href="/docs/configuration/core-settings" title="Core Settings" description="Basic settings, environment, exec commands" />
+  <Card href="/docs/configuration/window-management" title="Window Management" description="Rules, layouts, tags, and workspaces" />
+  <Card href="/docs/configuration/input-devices" title="Input Devices" description="Keyboard, mouse, trackpad, gestures" />
+  <Card href="/docs/configuration/appearance" title="Appearance" description="Effects, animations, borders, colors" />
+  <Card href="/docs/configuration/advanced" title="Advanced Features" description="IPC, scratchpad, virtual monitors" />
+</Cards>
+
+## Features
+
+Explore MangoWC's advanced capabilities.
+
+<Cards>
+  <Card href="/docs/features" title="Features Overview" description="Feature overview and capabilities" />
+  <Card href="/docs/features/layouts" title="Layouts" description="Supported layouts and configuration" />
+  <Card href="/docs/features/animations" title="Animations" description="Animation system and customization" />
+  <Card href="/docs/features/ipc" title="IPC" description="Inter-process communication with mmsg" />
+  <Card href="/docs/features/integrations" title="Integrations" description="Waybar, portals, clipboard, screen sharing" />
+</Cards>
+
+## Resources
+
+<Cards>
+  <Card href="https://github.com/DreamMaoMao/mangowc" title="GitHub Repository" description="Source code and development" />
+  <Card href="https://discord.gg/CPjbDxesh5" title="Discord Community" description="Join the MangoWC community" />
+  <Card href="https://github.com/DreamMaoMao/mango-config" title="Example Configurations" description="Configuration examples and dotfiles" />
 </Cards>
