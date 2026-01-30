@@ -16,7 +16,7 @@ layer_animations=1
 
 ## Animation Types
 
-You can define different animation styles for opening and closing windows.
+You can define different animation styles for opening and closing windows and layer surfaces.
 
 **Available Types:** `slide`, `zoom`, `fade`, `none`.
 
@@ -59,13 +59,13 @@ zoom_end_ratio=0.7
 
 Control the speed of animations (in milliseconds).
 
-| Action | Setting | Default |
-| :--- | :--- | :--- |
-| Window Move | `animation_duration_move` | `500` |
-| Window Open | `animation_duration_open` | `400` |
-| Window Close | `animation_duration_close` | `800` |
-| Tag Switch | `animation_duration_tag` | `350` |
-| Focus Change | `animation_duration_focus` | `0` |
+| Setting | Type | Default | Description |
+|----------|------|---------|-------------|
+| `animation_duration_move` | integer | 500 | Move animation duration (ms) |
+| `animation_duration_open` | integer | 400 | Open animation duration (ms) |
+| `animation_duration_tag` | integer | 350 | Tag animation duration (ms) |
+| `animation_duration_close` | integer | 800 | Close animation duration (ms) |
+| `animation_duration_focus` | integer | 0 | Focus change (opacity transition) animation duration (ms) |
 
 ```ini
 # Example duration configuration
@@ -73,32 +73,34 @@ animation_duration_move=500
 animation_duration_open=400
 animation_duration_tag=350
 animation_duration_close=800
-animation_duration_focus=400
+animation_duration_focus=0
 ```
 
 ## Custom Bezier Curves
 
-Bezier curves determine the "feel" of the animation (e.g., linear vs. bouncy).
+Bezier curves determine the "feel" of animation (e.g., linear vs. bouncy).
 
 The format is `x1,y1,x2,y2`.
 
-| Action | Setting | Default |
-| :--- | :--- | :--- |
-| Window Move | `animation_curve_move` | `0.46,1.0,0.29,1` |
-| Window Open | `animation_curve_open` | `0.46,1.0,0.29,1` |
-| Window Open Opacity | `animation_curve_opafadein` | `0.46,1.0,0.29,1` |
-| Window Close | `animation_curve_close` | `0.08,0.92,0,1` |
-| Window Close Opacity | `animation_curve_opafadeout` | `0.5,0.5,0.5,0.5` |
-| Tag switch | `animation_curve_tag` | `0.46,1.0,0.29,1` |
-| Focus Opacity Change | `animation_curve_focus` | `0.46,1.0,0.29,1` |
+| Setting | Type | Default | Description |
+|----------|------|---------|-------------|
+| `animation_curve_open` | string | `0.46,1.0,0.29,1` | Open animation bezier curve |
+| `animation_curve_move` | string | `0.46,1.0,0.29,1` | Move animation bezier curve |
+| `animation_curve_tag` | string | `0.46,1.0,0.29,1` | Tag animation bezier curve |
+| `animation_curve_close` | string | `0.08,0.92,0,1` | Close animation bezier curve |
+| `animation_curve_focus` | string | `0.46,1.0,0.29,1` | Focus change (opacity transition) animation bezier curve |
+| `animation_curve_opafadein` | string | `0.46,1.0,0.29,1` | Open opacity animation bezier curve |
+| `animation_curve_opafadeout` | string | `0.5,0.5,0.5,0.5` | Close opacity animation bezier curve |
 
 ```ini
 # Example bezier curves
-animation_curve_open=0.46,1.0,0.29,1.1
+animation_curve_open=0.46,1.0,0.29,1
 animation_curve_move=0.46,1.0,0.29,1
 animation_curve_tag=0.46,1.0,0.29,1
 animation_curve_close=0.08,0.92,0,1
 animation_curve_focus=0.46,1.0,0.29,1
+animation_curve_opafadein=0.46,1.0,0.29,1
+animation_curve_opafadeout=0.5,0.5,0.5,0.5
 ```
 
 <Accordions>
