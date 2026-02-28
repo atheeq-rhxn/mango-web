@@ -2,8 +2,14 @@ import { createMDX } from "fumadocs-mdx/next";
 
 const withMDX = createMDX();
 
+const isGitHubPages = process.env.GITHUB_PAGES === "true";
+
 const nextConfig = {
-	output: "export",
+	...(isGitHubPages && {
+		output: "export",
+		basePath: "/mangowc-web",
+		assetPrefix: "https://atheeq-rhxn.github.io/mangowc-web",
+	}),
 	trailingSlash: true,
 	reactCompiler: false,
 	compress: true,
@@ -11,9 +17,6 @@ const nextConfig = {
 	images: {
 		unoptimized: true,
 	},
-	...(process.env.NODE_ENV === "production" && {
-		basePath: "/mangowc-web",
-	}),
 };
 
 export default withMDX(nextConfig);
