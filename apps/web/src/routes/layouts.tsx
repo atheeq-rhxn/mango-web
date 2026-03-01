@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { LayoutShowcase } from "@/components/layouts/LayoutShowcase";
+import { Layouts } from "@/components/layouts/Layouts";
 
 export const Route = createFileRoute("/layouts")({
   component: LayoutsPage,
@@ -36,7 +36,7 @@ function LayoutsPage() {
               adjust parameters to see how windows are arranged.
             </p>
           </div>
-          <LayoutShowcase />
+          <Layouts/>
         </div>
       </div>
     </div>
