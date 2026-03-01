@@ -8,7 +8,7 @@ export default function Layout({ children }: LayoutProps<"/docs">) {
 			tree={source.pageTree}
 			sidebar={{ prefetch: false }}
 			{...baseOptions()}
-			githubUrl="https://github.com/DreamMaoMao/mangowc"
+			githubUrl="https://github.com/mangowm/mango"
 		>
 			{children}
 		</DocsLayout>

@@ -96,7 +96,7 @@ export function Header() {
 					<ModeToggle />
 					<div className="hidden gap-4 md:flex">
 						<a
-							href="https://github.com/DreamMaoMao/mangowc"
+							href="https://github.com/mangowm/mango"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="text-foreground/70 transition-colors hover:text-primary"
@@ -173,7 +173,7 @@ export function Header() {
 						<div className="mt-3 border-border border-t pt-3">
 							<div className="flex items-center gap-4 px-3 py-2">
 								<a
-									href="https://github.com/DreamMaoMao/mangowc"
+									href="https://github.com/mangowm/mango"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="text-foreground/70 transition-colors hover:text-primary"

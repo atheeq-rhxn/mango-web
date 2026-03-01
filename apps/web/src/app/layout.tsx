@@ -8,7 +8,7 @@ import { basePath } from "@/lib/base-path";
 import { createMetadata, SITE_DESCRIPTION } from "@/lib/metadata";
 
 const SITE_TITLE = "MangoWC - Lightweight Wayland Compositor";
-const SITE_URL = "https://mangowc.vercel.app";
+const SITE_URL = "https://mangowm.github.io/mango-web/";
 const SITE_OG_IMAGE = `${basePath}/image.webp`;
 const IMAGE_VERSION = "3";
 const TWITTER_CREATOR = "";
@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({ subsets: ["latin"] });
 const jsonLdSoftware = {
 	"@context": "https://schema.org",
 	"@type": "SoftwareApplication",
-	name: "MangoWC",
+	name: "mangowm",
 	alternateName: "Mango Window Compositor",
 	description: SITE_DESCRIPTION,
 	applicationCategory: "DesktopEnhancementApplication",
@@ -27,15 +27,15 @@ const jsonLdSoftware = {
 	programmingLanguage: "C",
 	softwareVersion: "latest",
 	url: SITE_URL,
-	codeRepository: "https://github.com/DreamMaoMao/mangowc",
-	downloadUrl: "https://github.com/DreamMaoMao/mangowc/releases",
-	license: "https://github.com/DreamMaoMao/mangowc/blob/main/LICENSE",
+	codeRepository: "https://github.com/mangowm/mango",
+	downloadUrl: "https://github.com/mangowm/mango/releases",
+	license: "https://github.com/mangowm/mango/blob/main/LICENSE",
 	author: {
 		"@type": "Person",
 		name: "DreamMaoMao",
-		url: "https://github.com/DreamMaoMao",
+		url: "https://github.com/mangowm",
 	},
-	sameAs: ["https://github.com/DreamMaoMao/mangowc", SITE_URL],
+	sameAs: ["https://github.com/mangowm/mango", SITE_URL],
 	keywords: [
 		"wayland compositor",
 		"dwl",
@@ -51,7 +51,7 @@ const jsonLdOrganization = {
 	name: "MangoWC",
 	url: SITE_URL,
 	logo: `${SITE_URL}/favicon/web-app-manifest-512x512.webp`,
-	sameAs: ["https://github.com/DreamMaoMao/mangowc"],
+	sameAs: ["https://github.com/mangowm/mango"],
 };
 
 export const metadata = createMetadata({

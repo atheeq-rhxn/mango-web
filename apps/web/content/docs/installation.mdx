@@ -107,7 +107,7 @@ Add to `$HOME/.config/guix/channels.scm`:
 ```scheme
 (cons (channel
         (name 'mangowc)
-        (url "https://github.com/DreamMaoMao/mangowc.git")
+        (url "https://github.com/mangowm/mango.git")
         (branch "main"))
       %default-channels)
 ```
@@ -149,7 +149,7 @@ The repository provides a Flake with a NixOS module.
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     mangowc = {
-      url = "github:DreamMaoMao/mangowc";
+      url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # other inputs ...
@@ -257,7 +257,7 @@ sudo ninja -C build install
 **Build MangoWC**
 Finally, compile the compositor itself.
 ```bash
-git clone https://github.com/DreamMaoMao/mangowc.git
+git clone https://github.com/mangowm/mango.git
 cd mangowc
 meson build -Dprefix=/usr
 sudo ninja -C build install

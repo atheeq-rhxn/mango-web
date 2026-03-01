@@ -28,7 +28,7 @@ export function Footer() {
 						<ul className="space-y-2">
 							<li>
 								<a
-									href="https://github.com/DreamMaoMao/mangowc"
+									href="https://github.com/mangowm/mango"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="text-foreground/70 text-sm transition-colors hover:text-primary"
@@ -46,7 +46,7 @@ export function Footer() {
 							</li>
 							<li>
 								<a
-									href="https://github.com/DreamMaoMao/mangowc/wiki"
+									href="https://github.com/mangowm/mango/wiki"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="text-foreground/70 text-sm transition-colors hover:text-primary"
@@ -72,7 +72,7 @@ export function Footer() {
 							</li>
 							<li>
 								<a
-									href="https://github.com/DreamMaoMao/mangowc/discussions"
+									href="https://github.com/mangowm/mango/discussions"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="text-foreground/70 text-sm transition-colors hover:text-primary"
@@ -87,7 +87,7 @@ export function Footer() {
 						<h4 className="mb-4 font-semibold text-foreground">Connect</h4>
 						<div className="flex gap-4">
 							<a
-								href="https://github.com/DreamMaoMao/mangowc"
+								href="https://github.com/mangowm/mango"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="text-foreground/70 transition-colors hover:text-primary"

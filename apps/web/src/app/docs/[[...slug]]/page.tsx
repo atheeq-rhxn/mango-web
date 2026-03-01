@@ -75,7 +75,7 @@ export default async function DocPage(props: PageProps<"/docs/[[...slug]]">) {
 					/>
 					<ViewOptions
 						markdownUrl={`${basePath}/llms.mdx/docs/${[...page.slugs, "index.mdx"].join("/")}`}
-						githubUrl={`https://github.com/atheeq-rhxn/mangowc-web/blob/main/apps/web/content/docs/${page.path}`}
+						githubUrl={`https://github.com/mangowm/mango-web/blob/main/apps/web/content/docs/${page.path}`}
 					/>
 				</div>
 				<div className="prose prose-no-margin flex-1 text-fd-foreground/90">

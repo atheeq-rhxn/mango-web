@@ -44,7 +44,7 @@ export function Hero() {
 						</Link>
 
 						<Link
-							href="https://github.com/DreamMaoMao/mangowc"
+							href="https://github.com/mangowm/mango"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="rounded-full border border-border bg-background/60 px-8 py-3 font-semibold text-foreground backdrop-blur-md transition-colors hover:bg-accent hover:text-accent-foreground"
