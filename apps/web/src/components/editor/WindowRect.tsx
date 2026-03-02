@@ -15,9 +15,7 @@ export const WindowRect = memo(function WindowRect({ rect, focused, label }: Win
   return (
     <div
       className={`absolute rounded-lg border-2 ${
-        focused
-          ? "border-fd-primary bg-fd-primary/10"
-          : "border-fd-border bg-fd-background/80"
+        focused ? "border-fd-primary bg-fd-primary/10" : "border-fd-border bg-fd-background/80"
       }`}
       style={{ left: rect.x, top: rect.y, width: rect.width, height: rect.height }}
     >

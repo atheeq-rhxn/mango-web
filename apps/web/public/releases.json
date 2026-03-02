@@ -42,14 +42,14 @@
     "body": "Due to resource limits on our previous free web hosting, the project has been migrated to the mangowm organization for better management.\r\n\r\nNew Address: https://github.com/mangowm/mango\r\n\r\nArch Linux (AUR) Users: Please note that the package names have changed. Use:\r\n`yay -S mangowm-git` and `yay -S mangowm-wlonly-git`\r\n\r\n---\r\n\r\n### 🐛 Bug Fixes\r\n- Pointer events being one event behind.\r\n- Avoid triggering assertions when the animation opacity over 1.0.\r\n---\r\n",
     "reactions": {
       "url": "https://api.github.com/repos/mangowm/mango/releases/291737627/reactions",
-      "total_count": 7,
-      "+1": 0,
+      "total_count": 20,
+      "+1": 2,
       "-1": 0,
       "laugh": 0,
       "hooray": 0,
       "confused": 0,
-      "heart": 3,
-      "rocket": 3,
+      "heart": 9,
+      "rocket": 8,
       "eyes": 1
     }
   },

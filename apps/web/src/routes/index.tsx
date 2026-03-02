@@ -51,7 +51,17 @@ function Badges({ version }: { version: string }) {
       >
         <span className="h-1.5 w-1.5 rounded-full bg-fd-primary" />
         {version}
-        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="12"
+          height="12"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <path d="M5 12h14M12 5l7 7-7 7" />
         </svg>
       </Link>
@@ -103,9 +113,22 @@ function Hero({ version }: { version: string }) {
         </div>
 
         {/* Scroll arrow */}
-        <div aria-hidden="true" className="relative z-10 flex flex-col items-center gap-1.5 pb-2 text-fd-muted-foreground/50">
+        <div
+          aria-hidden="true"
+          className="relative z-10 flex flex-col items-center gap-1.5 pb-2 text-fd-muted-foreground/50"
+        >
           <div className="h-6 w-px bg-gradient-to-b from-transparent to-fd-muted-foreground/30" />
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
             <path d="M12 5v14M5 12l7 7 7-7" />
           </svg>
         </div>

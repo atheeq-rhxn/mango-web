@@ -36,7 +36,9 @@ function normalizeBody(body: string) {
 
 const STREAMDOWN_COMPONENTS = {
   pre: ({ children, className }: any) => (
-    <pre className={`mb-3 overflow-x-auto rounded-lg border border-fd-border bg-fd-muted/50 px-4 py-3 text-sm ${className ?? ""}`}>
+    <pre
+      className={`mb-3 overflow-x-auto rounded-lg border border-fd-border bg-fd-muted/50 px-4 py-3 text-sm ${className ?? ""}`}
+    >
       {children}
     </pre>
   ),
@@ -44,16 +46,28 @@ const STREAMDOWN_COMPONENTS = {
     <code className={`font-mono text-xs text-fd-foreground ${className ?? ""}`}>{children}</code>
   ),
   h1: ({ children, className }: any) => (
-    <h1 className={`mb-3 mt-6 text-base font-bold text-fd-foreground first:mt-0 ${className ?? ""}`}>{children}</h1>
+    <h1
+      className={`mb-3 mt-6 text-base font-bold text-fd-foreground first:mt-0 ${className ?? ""}`}
+    >
+      {children}
+    </h1>
   ),
   h2: ({ children, className }: any) => (
-    <h2 className={`mb-2 mt-5 text-sm font-bold uppercase tracking-wide text-fd-foreground first:mt-0 ${className ?? ""}`}>{children}</h2>
+    <h2
+      className={`mb-2 mt-5 text-sm font-bold uppercase tracking-wide text-fd-foreground first:mt-0 ${className ?? ""}`}
+    >
+      {children}
+    </h2>
   ),
   h3: ({ children, className }: any) => (
-    <h3 className={`mb-2 mt-4 text-sm font-semibold text-fd-foreground ${className ?? ""}`}>{children}</h3>
+    <h3 className={`mb-2 mt-4 text-sm font-semibold text-fd-foreground ${className ?? ""}`}>
+      {children}
+    </h3>
   ),
   p: ({ children, className }: any) => (
-    <p className={`mb-3 text-sm leading-relaxed text-fd-foreground/80 ${className ?? ""}`}>{children}</p>
+    <p className={`mb-3 text-sm leading-relaxed text-fd-foreground/80 ${className ?? ""}`}>
+      {children}
+    </p>
   ),
   ul: ({ children, className }: any) => (
     <ul className={`mb-3 space-y-1 pl-4 ${className ?? ""}`}>{children}</ul>
@@ -65,21 +79,42 @@ const STREAMDOWN_COMPONENTS = {
     <li className={`text-sm leading-relaxed text-fd-foreground ${className ?? ""}`}>{children}</li>
   ),
   a: ({ href, children, className }: any) => (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={`text-fd-primary underline underline-offset-2 hover:opacity-80 ${className ?? ""}`}>{children}</a>
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`text-fd-primary underline underline-offset-2 hover:opacity-80 ${className ?? ""}`}
+    >
+      {children}
+    </a>
   ),
   blockquote: ({ children, className }: any) => (
-    <blockquote className={`mb-3 border-l-2 border-fd-primary/40 pl-3 text-sm italic text-fd-foreground/70 ${className ?? ""}`}>{children}</blockquote>
+    <blockquote
+      className={`mb-3 border-l-2 border-fd-primary/40 pl-3 text-sm italic text-fd-foreground/70 ${className ?? ""}`}
+    >
+      {children}
+    </blockquote>
   ),
 } as const;
 
-function ReleaseCard({ release, index, total }: { release: GitHubRelease; index: number; total: number }) {
+function ReleaseCard({
+  release,
+  index,
+  total,
+}: {
+  release: GitHubRelease;
+  index: number;
+  total: number;
+}) {
   const isLatest = index === 0 && !release.prerelease;
-  const body = useMemo(() => release.body ? normalizeBody(release.body) : null, [release.body]);
+  const body = useMemo(() => (release.body ? normalizeBody(release.body) : null), [release.body]);
 
   return (
     <div className="relative flex gap-8 sm:gap-12">
       <div className="flex flex-col items-center">
-        <div className={`relative z-10 mt-1 h-3 w-3 shrink-0 rounded-full border-2 ${isLatest ? "border-fd-primary bg-fd-primary" : "border-fd-border bg-fd-background"}`} />
+        <div
+          className={`relative z-10 mt-1 h-3 w-3 shrink-0 rounded-full border-2 ${isLatest ? "border-fd-primary bg-fd-primary" : "border-fd-border bg-fd-background"}`}
+        />
         {index < total - 1 && <div className="mt-1 w-px flex-1 bg-fd-border" />}
       </div>
 
@@ -99,7 +134,9 @@ function ReleaseCard({ release, index, total }: { release: GitHubRelease; index:
               Pre-release
             </span>
           )}
-          <span className="ml-auto text-xs text-fd-foreground/60">{formatDate(release.published_at)}</span>
+          <span className="ml-auto text-xs text-fd-foreground/60">
+            {formatDate(release.published_at)}
+          </span>
         </div>
 
         {release.name && release.name !== release.tag_name && (
@@ -124,7 +161,17 @@ function ReleaseCard({ release, index, total }: { release: GitHubRelease; index:
             className="inline-flex items-center gap-1.5 text-xs text-fd-foreground/60 transition-colors hover:text-fd-foreground"
           >
             View on GitHub
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
               <path d="M7 7h10v10M7 17 17 7" />
             </svg>
           </a>
@@ -162,14 +209,23 @@ function Releases() {
         to="/"
         className="fixed left-6 top-6 z-50 inline-flex items-center gap-2 rounded-full border border-fd-border bg-fd-background px-4 py-2 text-sm font-medium text-fd-foreground shadow-md backdrop-blur-md transition-colors hover:text-fd-primary"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="15"
+          height="15"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <path d="M19 12H5M12 5l-7 7 7 7" />
         </svg>
         Back
       </Link>
 
       <div className="mx-auto w-full max-w-4xl">
-
         <div className="mb-12">
           <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-widest text-fd-primary">
             Changelog

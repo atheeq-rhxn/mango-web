@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite dev --port=4000",
     "prebuild": "bun run scripts/fetch-version.ts",
-    "build": "vite build && mv .output/dist/client/* .output/public/",
+    "build": "vite build && cp .output/public/_shell.html .output/public/index.html",
     "start": "serve .output/public --config ../../serve.json",
     "preview": "vite preview",
     "types:check": "fumadocs-mdx && tsc --noEmit",

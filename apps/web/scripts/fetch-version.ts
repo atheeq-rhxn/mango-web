@@ -34,7 +34,11 @@ async function fetchReleases() {
     const latest = releases[0];
     const latestVersionPath = resolve("src/lib/latest-version.ts");
     const version = latest.tag_name.startsWith("v") ? latest.tag_name : `v${latest.tag_name}`;
-    writeFileSync(latestVersionPath, `export const latestVersion = "${version}" as const;\n`, "utf-8");
+    writeFileSync(
+      latestVersionPath,
+      `export const latestVersion = "${version}" as const;\n`,
+      "utf-8",
+    );
     console.log(`✓ Written latest version to src/lib/latest-version.ts`);
   }
 }

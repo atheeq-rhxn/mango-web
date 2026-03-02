@@ -86,11 +86,7 @@ export function ConfigExportPanel({ params, monitor }: ConfigExportPanelProps) {
       </div>
 
       <div className="border-t p-3">
-        <Button
-          size="sm" variant="outline"
-          className="w-full text-sm"
-          onClick={handleCopy}
-        >
+        <Button size="sm" variant="outline" className="w-full text-sm" onClick={handleCopy}>
           {copied ? "✓ Copied!" : "Copy to clipboard"}
         </Button>
       </div>

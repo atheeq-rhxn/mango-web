@@ -7,6 +7,7 @@ import { defineConfig } from "vite";
 import tsConfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
+  base: "/mango-web/",
   server: {
     port: 3000,
   },
@@ -24,21 +25,6 @@ export default defineConfig({
           crawlLinks: true,
         },
       },
-
-      pages: [
-        {
-          path: "/docs",
-        },
-        {
-          path: "/api/search",
-        },
-        {
-          path: "llms-full.txt",
-        },
-        {
-          path: "llms.txt",
-        },
-      ],
     }),
     react(),
     // please see https://tanstack.com/start/latest/docs/framework/react/guide/hosting#nitro for guides on hosting
