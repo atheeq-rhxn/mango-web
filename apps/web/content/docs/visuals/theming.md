@@ -3,8 +3,6 @@ title: Theming
 description: Customize the visual appearance of borders, colors, and the cursor.
 ---
 
-import { Callout } from 'fumadocs-ui/components/callout';
-
 ## Dimensions
 
 Control the sizing of window borders and gaps.
@@ -23,13 +21,13 @@ Colors are defined in `0xRRGGBBAA` hex format.
 
 ```ini
 # Background color of the root window
-rootcolor=0x201b14ff
+rootcolor=0x323232ff
 
 # Inactive window border
 bordercolor=0x444444ff
 
 # Active window border
-focuscolor=0xc9b890ff
+focuscolor=0xc66b25ff
 
 # Urgent window border (alerts)
 urgentcolor=0xad401fff
@@ -43,12 +41,10 @@ You can also color-code windows based on their state:
 | :--- | :--- | :--- |
 | Maximized | `maximizescreencolor` | `0x89aa61ff` |
 | Scratchpad | `scratchpadcolor` | `0x516c93ff` |
-
-<Callout type="tip">
-For scratchpad window sizing, see [Scratchpad](/docs/window-management/scratchpad) configuration.
-</Callout>
 | Global | `globalcolor` | `0xb153a7ff` |
 | Overlay | `overlaycolor` | `0x14a57cff` |
+
+> **Tip:** For scratchpad window sizing, see [Scratchpad](/docs/window-management/scratchpad) configuration.
 
 ## Cursor Theme
 
@@ -59,7 +55,5 @@ cursor_size=24
 cursor_theme=Adwaita
 ```
 
-<Callout type="tip">
-You may also want to set the `XCURSOR_SIZE` environment variable to match:
-`env=XCURSOR_SIZE,24`
-</Callout>
+> **Tip:** You may also want to set the `XCURSOR_SIZE` environment variable to match:
+> `env=XCURSOR_SIZE,24`
